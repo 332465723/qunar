@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -16,57 +16,20 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    swiperIcons: Array
+  },
   data: function () {
     return {
-      iconList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-          desc: '景点门票'
-        }, {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '深圳必2'
-        }, {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '深圳必3'
-        }, {
-          id: '0004',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '深圳必4'
-        }, {
-          id: '0005',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '深圳必5'
-        }, {
-          id: '0006',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '深圳必6'
-        }, {
-          id: '0007',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '深圳必7'
-        }, {
-          id: '0008',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '深圳必由8'
-        }, {
-          id: '0009',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '深圳必由9'
-        }, {
-          id: '0000',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-          desc: '深圳必0'
-        }
-      ]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {
     pages: function () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.swiperIcons.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

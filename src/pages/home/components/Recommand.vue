@@ -17,37 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommand',
-  data: function () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1905/e6/e683c8cf5e97ce03a3.img.jpg_200x200_4769276c.jpg',
-          title: '世界之窗1',
-          desc: '浪漫海洋主题公园，你我的家乡1'
-        }, {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1905/e6/e683c8cf5e97ce03a3.img.jpg_200x200_4769276c.jpg',
-          title: '世界之窗2',
-          desc: '浪漫海洋主题公园，你我的家乡2'
-        }, {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1905/e6/e683c8cf5e97ce03a3.img.jpg_200x200_4769276c.jpg',
-          title: '世界之窗3',
-          desc: '浪漫海洋主题公园，你我的家乡3'
-        }, {
-          id: '0004',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1905/e6/e683c8cf5e97ce03a3.img.jpg_200x200_4769276c.jpg',
-          title: '世界之窗4',
-          desc: '浪漫海洋主题公园，你我的家乡4'
-        }, {
-          id: '0005',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1905/e6/e683c8cf5e97ce03a3.img.jpg_200x200_4769276c.jpg',
-          title: '世界之窗5',
-          desc: '浪漫海洋主题公园，你我的家乡5'
-        }
-      ]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>
